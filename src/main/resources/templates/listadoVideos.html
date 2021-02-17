@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Listado de videos</title>
+
+</head>
+<body>
+Página con listado de videos
+
+<table>
+    <thead>
+    <tr>
+        <th th:text="uno">Name</th>
+        <th th:text="dos">Price</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="video: ${videos}">
+        <td th:text="${video.descripcion}">Oranges</td>
+        <td th:text="${video.codigoYoutube}">0.99</td>
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>
