@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Formulario de Vídeo</title>
+    <object th:include="fragments/fragmentos :: head" th:remove="tag"></object>
+</head>
+<body>
+<div class="container-fluid">
+    <div th:replace="fragments/fragmentos :: menu"></div>
+    <div th:replace="fragments/MigasDePan :: miguitas"></div>
+
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">Alta de vídeos</h5>
+    <form>
+        <div class="form-group">
+            <label for="nombre">Nombre</label>
+            <input type="text" class="form-control" id="nombre" aria-describedby="emailHelp">
+            <small id="emailHelp" class="form-text text-muted">Introduce el nombre del vídeo</small>
+        </div>
+        <label for="codigoYoutube">Código Youtube</label>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon3">https://www.youtube.com/watch?v=</span>
+            </div>
+            <input type="text" class="form-control" id="codigoYoutube" aria-describedby="basic-addon3">
+        </div>
+        <div class="form-group">
+            <label for="descripcion">Descripción del vídeo</label>
+            <textarea class="form-control" id="descripcion" rows="3"></textarea>
+        </div>
+
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text">bpm</span>
+            </div>
+            <input style="text-align: right;" type="text" class="form-control" aria-label="Beats per second">
+
+        </div>
+
+        <div class="row align-items-start">
+
+        <select class="form-select form-select-lg mb-3" aria-label="Default select example">
+            <option selected>Categoría</option>
+            <option value="1">One</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+        </select>
+
+
+        <select class="form-select form-select-lg mb-3" aria-label="Default select example">
+            <option selected>Escala o Modo</option>
+            <option value="1">One</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+        </select>
+
+        <select class="form-select form-select-lg mb-3" aria-label="Default select example">
+            <option selected>Tonalidad</option>
+            <option value="1">One</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+        </select>
+
+
+        </div>
+
+        <button  type="submit" class="btn btn-primary float-right">Guardar</button>
+
+
+
+    </form>
+        </div>
+    </div>
+</div>
+
+<object th:include="fragments/fragmentos :: jquery" th:remove="tag"></object>
+</body>
+</html>

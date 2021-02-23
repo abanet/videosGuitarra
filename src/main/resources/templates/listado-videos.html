@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
     <title>Listado de videos</title>
-
+    <object th:include="fragments/fragmentos :: head" th:remove="tag"></object>
 </head>
 <body>
+<div class="container-fluid">
+    <div th:replace="fragments/fragmentos :: menu"></div>
 Página con listado de videos
 
+<div th:replace="fragments/MigasDePan :: miguitas"></div>
 <table>
     <thead>
     <tr>
@@ -22,6 +24,7 @@ Página con listado de videos
     </tr>
     </tbody>
 </table>
-
+</div>
+<object th:include="fragments/fragmentos :: jquery" th:remove="tag"></object>
 </body>
 </html>

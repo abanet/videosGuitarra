@@ -6,6 +6,7 @@ import javax.persistence.*;
 @Table(name = "videos", schema = "videosguitarra")
 public class VideosEntity {
     private Integer id;
+    private String nombre;
     private String descripcion;
     private String codigoYoutube;
     private String bpm;
@@ -14,7 +15,6 @@ public class VideosEntity {
     private ModoEntity modo;
 
     @Id
-    @GeneratedValue
     @Column(name = "id")
     public Integer getId() {
         return id;
@@ -24,7 +24,15 @@ public class VideosEntity {
         this.id = id;
     }
 
+    @Basic
+    @Column(name = "nombre")
+    public String getNombre() {
+        return nombre;
+    }
 
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
 
     @Basic
     @Column(name = "descripcion")
@@ -64,6 +72,7 @@ public class VideosEntity {
         VideosEntity that = (VideosEntity) o;
 
         if (id != null ? !id.equals(that.id) : that.id != null) return false;
+        if (nombre != null ? !nombre.equals(that.nombre) : that.nombre != null) return false;
         if (descripcion != null ? !descripcion.equals(that.descripcion) : that.descripcion != null) return false;
         if (codigoYoutube != null ? !codigoYoutube.equals(that.codigoYoutube) : that.codigoYoutube != null)
             return false;
@@ -75,6 +84,7 @@ public class VideosEntity {
     @Override
     public int hashCode() {
         int result = id != null ? id.hashCode() : 0;
+        result = 31 * result + (nombre != null ? nombre.hashCode() : 0);
         result = 31 * result + (descripcion != null ? descripcion.hashCode() : 0);
         result = 31 * result + (codigoYoutube != null ? codigoYoutube.hashCode() : 0);
         result = 31 * result + (bpm != null ? bpm.hashCode() : 0);
@@ -97,8 +107,8 @@ public class VideosEntity {
         return tono;
     }
 
-    public void setTono(TonoEntity tonoByTonoId) {
-        this.tono = tonoByTonoId;
+    public void setTono(TonoEntity tono) {
+        this.tono = tono;
     }
 
     @ManyToOne

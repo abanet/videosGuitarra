@@ -11,7 +11,6 @@ public class TonoEntity {
     private Collection<VideosEntity> videos;
 
     @Id
-    @GeneratedValue
     @Column(name = "id")
     public Integer getId() {
         return id;

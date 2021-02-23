@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Inicio</title>
+    <object th:include="fragments/fragmentos :: head" th:remove="tag"></object>
+
+</head>
+<body>
+
+<div class="container-fluid">
+    <div th:replace="fragments/fragmentos :: menu"></div>
+    <h1 class="rojo">Página de inicio ..</h1>
+
+    <div th:replace="fragments/MigasDePan :: miguitas"></div>
+    <ul>
+        <li>
+            <a th:href="@{/videos/listado}">Listado de vídeos</a>
+        </li>
+        <li>
+            <a th:href="@{/videos/formulario}">Formulario de alta</a>
+        </li>
+    </ul>
+</div>
+
+<object th:include="fragments/fragmentos :: jquery" th:remove="tag"></object>
+</body>
+</html>

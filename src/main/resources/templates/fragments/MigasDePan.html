@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<div th:fragment="miguitas">
+    <nav aria-label="breadcrumb">
+    <ol  class="breadcrumb">
+        <th:block th:each="entrada : ${session.currentBreadCrumb}">
+        <li th:if="${entrada.currentPage}" th:text="${entrada.label}" class="breadcrumb-item active" aria-current="page">
+        </li>
+        <li th:if="not ${entrada.currentPage}" class="breadcrumb-item">
+            <a th:href="${entrada.url}" th:text="${entrada.label}"></a>
+        </li>
+        </th:block>
+    </ol>
+    </nav>
+</div>
+</body>
+</html>

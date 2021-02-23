@@ -1,6 +1,5 @@
 package es.codigoswift.videosguitarra.beans;
 
-import es.codigoswift.videosguitarra.modelo.VideosEntity;
 import lombok.*;
 
 import java.util.Collection;
@@ -14,5 +13,5 @@ import java.util.Collection;
 public class Tono {
     private Integer id;
     private String nombre;
-    private Collection<VideosEntity> videos;
+    private Collection<Video> videos;
 }

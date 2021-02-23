@@ -4,14 +4,13 @@ import javax.persistence.*;
 import java.util.Collection;
 
 @Entity
-@Table(name = "categoria", schema = "videosguitarra", catalog = "")
+@Table(name = "categoria", schema = "videosguitarra")
 public class CategoriaEntity {
     private Integer id;
     private String nombre;
     private Collection<VideosEntity> videos;
 
     @Id
-    @GeneratedValue
     @Column(name = "id")
     public Integer getId() {
         return id;
@@ -20,7 +19,6 @@ public class CategoriaEntity {
     public void setId(Integer id) {
         this.id = id;
     }
-
 
     @Basic
     @Column(name = "nombre")
