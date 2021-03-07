@@ -46,13 +46,13 @@ class VideoMapperTest {
         Tono tono = new Tono();
         categoria.setId(categoriaEntity.getId());
         categoria.setNombre(categoriaEntity.getNombre());
-        categoria.setVideos(categoriaEntity.getVideos());
+        categoria.setVideos(null);
         modo.setId(modoEntity.getId());
         modo.setNombre(modoEntity.getNombre());
-        modo.setVideos(modoEntity.getVideos());
+        modo.setVideos(null);
         tono.setId(tonoEntity.getId());
         tono.setNombre(tonoEntity.getNombre());
-        tono.setVideos(tonoEntity.getVideos());
+        tono.setVideos(null);
         //when
         Video videoDTO = VideoMapper.INSTANCE.toVideo(videosEntity);
 

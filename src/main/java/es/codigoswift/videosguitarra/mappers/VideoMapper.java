@@ -3,6 +3,7 @@ package es.codigoswift.videosguitarra.mappers;
 import es.codigoswift.videosguitarra.beans.Video;
 import es.codigoswift.videosguitarra.modelo.VideosEntity;
 import org.mapstruct.Mapper;
+import org.mapstruct.Mapping;
 import org.mapstruct.factory.Mappers;
 
 import java.util.List;
@@ -11,6 +12,10 @@ import java.util.List;
 public interface VideoMapper {
     VideoMapper INSTANCE = Mappers.getMapper(VideoMapper.class);
 
+    @Mapping(target = "categoria", ignore = true)
+    @Mapping(target = "tono", ignore = true)
+    @Mapping(target = "modo", ignore = true)
     Video toVideo(VideosEntity video);
+
     List<Video> toListVideo(List<VideosEntity> entities);
 }

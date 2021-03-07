@@ -3,6 +3,7 @@
 <head>
     <title>Listado de videos</title>
     <object th:include="fragments/fragmentos :: head" th:remove="tag"></object>
+    <object th:include="fragments/fragmentos :: DataTableCSS" th:remove="tag"></object>
 </head>
 <body>
 <div class="container-fluid">
@@ -10,21 +11,28 @@
 Página con listado de videos
 
 <div th:replace="fragments/MigasDePan :: miguitas"></div>
-<table>
+<table id="listaVideos" class="display">
     <thead>
     <tr>
-        <th th:text="uno">Name</th>
-        <th th:text="dos">Price</th>
+        <th>Nombre</th>
+        <th>Descripcion</th>
+        <th>Youtube</th>
+        <th>bpm</th>
     </tr>
     </thead>
     <tbody>
     <tr th:each="video: ${videos}">
-        <td th:text="${video.descripcion}">Oranges</td>
-        <td th:text="${video.codigoYoutube}">0.99</td>
+        <td th:text="${video.nombre}">Nombre</td>
+        <td th:text="${video.descripcion}">Descripción</td>
+        <td th:text="${video.codigoYoutube}">iqeor65ka</td>
+        <td th:text="${video.bpm}">120</td>
     </tr>
     </tbody>
 </table>
 </div>
 <object th:include="fragments/fragmentos :: jquery" th:remove="tag"></object>
+<object th:include="fragments/fragmentos :: scriptsDataTable" th:remove="tag"></object>
+
+<script th:src="@{/js/videos/listavideos.js}"></script>
 </body>
 </html>

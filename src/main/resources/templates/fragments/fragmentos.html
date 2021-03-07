@@ -19,6 +19,18 @@
     <link rel="stylesheet" th:href="@{/css/videos.css}"/>
 </head>
 
+<head th:fragment="DataTableCSS">
+    <!--DataTables-->
+    <link rel="stylesheet" th:href="@{/css/datatables/dataTables.bootstrap4.min.css}"
+          href="static/css/datatbles/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" th:href="@{/css/datatables/select.dataTables.min.css}"
+          href="static/css/datatables/select.dataTables.min.css">
+    <link rel="stylesheet" th:href="@{/css/datatables/dataTables.checkboxes.css}"
+          href="static/css/datatables/dataTables.checkboxes.css">
+    <link rel="stylesheet" th:href="@{/css/datatables/jquery.dataTables.min.css}"
+          href="static/css/datatables/jquery.dataTables.min.css">
+</head>
+
 <div th:fragment="menu">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
@@ -44,6 +56,23 @@
             </div>
         </div>
     </nav>
+</div>
+
+<div th:fragment="scriptsDataTable">
+    <!--DataTables-->
+    <script th:src="@{/js/datatables/jquery.dataTables.min.js}"
+            src="static/js/datatables/jquery.dataTables.min.js"></script>
+    <script th:src="@{/js/datatables/dataTables.bootstrap4.min.js}"
+            src="static/js/datatables/dataTables.bootstrap4.min.js"></script>
+    <script th:src="@{/js/datatables/dataTables.select.min.js}"
+            src="static/js/datatables/dataTables.select.min.js"></script>
+    <script th:src="@{/js/datatables/dataTables.checkboxes.min.js}"
+            src="static/js/datatables/dataTables.checkboxes.min.js"></script>
+    <script th:src="@{/js/datatables/dataTables.buttons.min.js}"
+            src="static/js/datatables/dataTables.buttons.min.js"></script>
+    <script th:src="@{/js/datatables/buttons.bootstrap4.min.js}"
+            src="static/js/datatables/buttons.bootstrap4.min.js"></script>
+
 </div>
 
 <!--/* SCRIPTS BOOTSTRAP - SIEMPRE FINAL DE PÁGINA */-->
