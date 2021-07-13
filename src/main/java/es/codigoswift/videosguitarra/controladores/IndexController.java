@@ -7,12 +7,11 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class IndexController {
-
     @Link(label="inicio", family="Videos", parent = "" )
     @GetMapping({ "/", "", "inicio", "index"})
     public ModelAndView inicio() {
-        ModelAndView modelAndView = new ModelAndView("inicio");
-        return modelAndView;
+        return new ModelAndView("inicio");
     }
-
 }
+
+
