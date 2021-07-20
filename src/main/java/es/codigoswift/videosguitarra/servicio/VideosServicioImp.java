@@ -19,7 +19,6 @@ public class VideosServicioImp implements  VideosServicio {
     public List<Video> buscarTodosLosVideos() {
         List<VideosEntity> videosEntities = videosRepositorio.findAll();
         List<Video> videos = VideoMapper.INSTANCE.toListVideo(videosEntities);
-
         return videos;
     }
 }
