@@ -1,10 +1,7 @@
 package es.codigoswift.videosguitarra.controladores;
 
 import es.codigoswift.videosguitarra.annotations.Link;
-import es.codigoswift.videosguitarra.beans.Categoria;
-import es.codigoswift.videosguitarra.beans.Modo;
-import es.codigoswift.videosguitarra.beans.Tono;
-import es.codigoswift.videosguitarra.beans.Video;
+import es.codigoswift.videosguitarra.beans.*;
 import es.codigoswift.videosguitarra.modelo.CategoriaEntity;
 import es.codigoswift.videosguitarra.repositorio.CategoriaRepositorio;
 import es.codigoswift.videosguitarra.repositorio.ModoRepositorio;
@@ -15,6 +12,7 @@ import es.codigoswift.videosguitarra.servicio.TonoServicio;
 import es.codigoswift.videosguitarra.servicio.VideosServicio;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -79,5 +77,14 @@ public class VideosControlador {
     @ResponseBody
     public List<Video> apiListadoVideos() {
         return videosServicio.buscarTodosLosVideos();
+    }
+
+    @PostMapping(value="/nuevoVideo")
+    @ResponseBody
+    public RespuestaCreateVideo crearNuevoVideo(@RequestBody PeticionVideos datos) {
+       RespuestaCreateVideo respuesta = new RespuestaCreateVideo();
+       respuesta.setData("datos");
+       //respuesta.setError("error");
+      return respuesta;
     }
 }

@@ -23,7 +23,14 @@ $(document).ready(function() {
 
 
     editor = new $.fn.dataTable.Editor( {
-        ajax: "editor",
+        ajax: {
+            'contentType': 'application/json',
+            'url': 'nuevoVideo',
+            'type': 'POST',
+            'data': function(d) {
+                return JSON.stringify(d);
+            }
+        },
         table: "#listaVideos2",
         fields: [ {
             label: "Nombre:",
@@ -41,38 +48,35 @@ $(document).ready(function() {
         ]
     } );
 
-    $.ajax({
-        "url": "listado2",
-        "type": "GET",
-        "datatype": 'json',
-        "success": function (data) {
-            $('#listaVideos2').DataTable({
-                "fixedHeader" : true,
-                "paging":   false,
-                "info":     true,
-                "autoWidth": true,
-                "language": {
-                    url: '/data/datatableSpain.json'
-                },
-                "order": [],
-                data: data,
-                columns: [
-                    { "data": "nombre" },
-                    { "data": "descripcion" },
-                    { "data": "codigoYoutube",
-                        "title": "Youtube",
-                        "orderable": false
-                    },
-                    { "data": "bpm" },
-                ],
-                buttons: [
-                    { extend: "create", editor: editor },
-                    { extend: "edit",   editor: editor },
-                    { extend: "remove", editor: editor }
-                ],
-                dom: "Bfrtip",
-            });
-        }
-    });
 
+    $('#listaVideos2').DataTable({
+        "fixedHeader" : true,
+        "paging":   false,
+        "info":     true,
+        "autoWidth": true,
+        "language": {
+            url: '/data/datatableSpain.json'
+        },
+        "order": [],
+        ajax: {
+            url: 'listado2',
+            dataSrc: ''
+        },
+        select: true,
+        columns: [
+            { "data": "nombre" },
+            { "data": "descripcion" },
+            { "data": "codigoYoutube",
+                "title": "Youtube",
+                "orderable": false
+            },
+            { "data": "bpm" },
+        ],
+        buttons: [
+            { extend: "create", editor: editor },
+            { extend: "edit",   editor: editor },
+            { extend: "remove", editor: editor }
+        ],
+        dom: "Bfrtip",
+    });
 } );

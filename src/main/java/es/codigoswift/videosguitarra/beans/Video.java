@@ -1,11 +1,13 @@
 package es.codigoswift.videosguitarra.beans;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.*;
 import org.springframework.validation.annotation.Validated;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
+import java.io.Serializable;
 
 
 @Getter @Setter
