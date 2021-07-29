@@ -15,8 +15,11 @@ $(document).ready(function() {
             null,
             { orderable: false },
             null
+        ],
+        dom: 'Bfrtip',
+        buttons: [
+            'copy', 'csv', 'excel', 'pdf', 'print'
         ]
-
         /*dom : '<if<rt>lp>'*/
     } );
 
